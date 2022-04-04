@@ -1,7 +1,7 @@
 <?php
 /**
- * Auteur : Cindy Hardegger
- * Date: 22.01.2019
+ * Auteur : Serghei Diulgherov
+ * Date: 04.04.2022
  * Contrôleur principal
  */
 

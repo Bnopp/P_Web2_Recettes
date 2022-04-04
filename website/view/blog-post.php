@@ -86,7 +86,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="index.php$"><img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -104,31 +104,31 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="blog-post.html">Blog Post</a></li>
-                                            <li><a href="receipe-post.html">Receipe Post</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
+                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="about.php">About Us</a></li>
+                                            <li><a href="blog-post.php">Blog Post</a></li>
+                                            <li><a href="receipe-post.php">Receipe Post</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
+                                            <li><a href="elements.php">Elements</a></li>
                                             <li><a href="#">Dropdown</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="about.html">About Us</a></li>
-                                                    <li><a href="blog-post.html">Blog Post</a></li>
-                                                    <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
+                                                    <li><a href="index.php">Home</a></li>
+                                                    <li><a href="about.php">About Us</a></li>
+                                                    <li><a href="blog-post.php">Blog Post</a></li>
+                                                    <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                    <li><a href="contact.php">Contact</a></li>
+                                                    <li><a href="elements.php">Elements</a></li>
                                                     <li><a href="#">Dropdown</a>
                                                         <ul class="dropdown">
-                                                            <li><a href="index.html">Home</a></li>
-                                                            <li><a href="about.html">About Us</a></li>
-                                                            <li><a href="blog-post.html">Blog Post</a></li>
-                                                            <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="elements.html">Elements</a></li>
+                                                            <li><a href="index.php">Home</a></li>
+                                                            <li><a href="about.php">About Us</a></li>
+                                                            <li><a href="blog-post.php">Blog Post</a></li>
+                                                            <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                            <li><a href="contact.php">Contact</a></li>
+                                                            <li><a href="elements.php">Elements</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -139,30 +139,30 @@
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="blog-post.html">Blog Post</a></li>
-                                                <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="about.php">About Us</a></li>
+                                                <li><a href="blog-post.php">Blog Post</a></li>
+                                                <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="blog-post.html">Blog Post</a></li>
-                                                <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="about.php">About Us</a></li>
+                                                <li><a href="blog-post.php">Blog Post</a></li>
+                                                <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="blog-post.html">Blog Post</a></li>
-                                                <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="about.php">About Us</a></li>
+                                                <li><a href="blog-post.php">Blog Post</a></li>
+                                                <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
                                             </ul>
                                             <div class="single-mega cn-col-4">
                                                 <div class="receipe-slider owl-carousel">
@@ -172,9 +172,9 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="receipe-post.html">Receipies</a></li>
-                                    <li><a href="receipe-post.html">4 Vegans</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="receipe-post.php">Receipies</a></li>
+                                    <li><a href="receipe-post.php">4 Vegans</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
 
                                 <!-- Newsletter Form -->
@@ -438,7 +438,7 @@
                     </div>
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="index.php"><img src="img/core-img/logo.png" alt=""></a>
                     </div>
                     <!-- Copywrite -->
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

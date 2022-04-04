@@ -86,7 +86,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="index.php"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -104,31 +104,31 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="blog-post.html">Blog Post</a></li>
-                                            <li><a href="receipe-post.html">Receipe Post</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
+                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="about.php">About Us</a></li>
+                                            <li><a href="blog-post.php">Blog Post</a></li>
+                                            <li><a href="receipe-post.php">Receipe Post</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
+                                            <li><a href="elements.php">Elements</a></li>
                                             <li><a href="#">Dropdown</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="about.html">About Us</a></li>
-                                                    <li><a href="blog-post.html">Blog Post</a></li>
-                                                    <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
+                                                    <li><a href="index.php">Home</a></li>
+                                                    <li><a href="about.php">About Us</a></li>
+                                                    <li><a href="blog-post.php">Blog Post</a></li>
+                                                    <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                    <li><a href="contact.php">Contact</a></li>
+                                                    <li><a href="elements.php">Elements</a></li>
                                                     <li><a href="#">Dropdown</a>
                                                         <ul class="dropdown">
-                                                            <li><a href="index.html">Home</a></li>
-                                                            <li><a href="about.html">About Us</a></li>
-                                                            <li><a href="blog-post.html">Blog Post</a></li>
-                                                            <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="elements.html">Elements</a></li>
+                                                            <li><a href="index.php">Home</a></li>
+                                                            <li><a href="about.php">About Us</a></li>
+                                                            <li><a href="blog-post.php">Blog Post</a></li>
+                                                            <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                            <li><a href="contact.php">Contact</a></li>
+                                                            <li><a href="elements.php">Elements</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -139,30 +139,30 @@
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="blog-post.html">Blog Post</a></li>
-                                                <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="about.php">About Us</a></li>
+                                                <li><a href="blog-post.php">Blog Post</a></li>
+                                                <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="blog-post.html">Blog Post</a></li>
-                                                <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="about.php">About Us</a></li>
+                                                <li><a href="blog-post.php">Blog Post</a></li>
+                                                <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="blog-post.html">Blog Post</a></li>
-                                                <li><a href="receipe-post.html">Receipe Post</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="about.php">About Us</a></li>
+                                                <li><a href="blog-post.php">Blog Post</a></li>
+                                                <li><a href="receipe-post.php">Receipe Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
                                             </ul>
                                             <div class="single-mega cn-col-4">
                                                 <div class="receipe-slider owl-carousel">
@@ -172,9 +172,9 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="receipe-post.html">Receipies</a></li>
-                                    <li><a href="receipe-post.html">4 Vegans</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="receipe-post.php">Receipies</a></li>
+                                    <li><a href="receipe-post.php">4 Vegans</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
 
                                 <!-- Newsletter Form -->
@@ -255,7 +255,7 @@
                         <div class="top-cta-content">
                             <h3>Strawberry Cake</h3>
                             <h6>Simple &amp; Delicios</h6>
-                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                            <a href="receipe-post.php" class="btn delicious-btn">See Full Receipe</a>
                         </div>
                     </div>
                 </div>
@@ -267,7 +267,7 @@
                         <div class="top-cta-content">
                             <h3>Chinesse Noodles</h3>
                             <h6>Simple &amp; Delicios</h6>
-                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                            <a href="receipe-post.php" class="btn delicious-btn">See Full Receipe</a>
                         </div>
                     </div>
                 </div>
@@ -293,7 +293,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="../resources/bootstrap/img/bg-img/r1.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Sushi Easy Receipy</h5>
                             </a>
                             <div class="ratings">
@@ -312,7 +312,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="../resources/bootstrap/img/bg-img/r2.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Homemade Burger</h5>
                             </a>
                             <div class="ratings">
@@ -331,7 +331,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="../resources/bootstrap/img/bg-img/r3.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Vegan Smoothie</h5>
                             </a>
                             <div class="ratings">
@@ -350,7 +350,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="../resources/bootstrap/img/bg-img/r4.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Calabasa soup</h5>
                             </a>
                             <div class="ratings">
@@ -369,7 +369,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="../resources/bootstrap/img/bg-img/r5.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Homemade Breakfast</h5>
                             </a>
                             <div class="ratings">
@@ -388,7 +388,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="../resources/bootstrap/img/bg-img/r6.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Healthy Fruit Desert</h5>
                             </a>
                             <div class="ratings">
@@ -438,7 +438,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Homemade italian pasta</h5>
                             </a>
                             <div class="ratings">
@@ -463,7 +463,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Baked Bread</h5>
                             </a>
                             <div class="ratings">
@@ -488,7 +488,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Scalops on salt</h5>
                             </a>
                             <div class="ratings">
@@ -513,7 +513,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Fruits on plate</h5>
                             </a>
                             <div class="ratings">
@@ -538,7 +538,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Macaroons</h5>
                             </a>
                             <div class="ratings">
@@ -563,7 +563,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Chocolate tart</h5>
                             </a>
                             <div class="ratings">
@@ -588,7 +588,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Berry Desert</h5>
                             </a>
                             <div class="ratings">
@@ -613,7 +613,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Zucchini Grilled on peper</h5>
                             </a>
                             <div class="ratings">
@@ -638,7 +638,7 @@
                         <!-- Receipe Content -->
                         <div class="receipe-content">
                             <span>January 04, 2018</span>
-                            <a href="receipe-post.html">
+                            <a href="receipe-post.php">
                                 <h5>Chicken Salad</h5>
                             </a>
                             <div class="ratings">
@@ -793,7 +793,7 @@
                     </div>
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.html"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
+                        <a href="index.php"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
                     </div>
                     <!-- Copywrite -->
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
