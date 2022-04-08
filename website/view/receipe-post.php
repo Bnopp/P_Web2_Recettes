@@ -86,7 +86,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.php"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="home.php"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -104,10 +104,10 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.php">Home</a></li>
+                                    <li class="active"><a href="home.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="home.php">Home</a></li>
                                             <li><a href="about.php">About Us</a></li>
                                             <li><a href="blog-post.php">Blog Post</a></li>
                                             <li><a href="receipe-post.php">Receipe Post</a></li>
@@ -115,7 +115,7 @@
                                             <li><a href="elements.php">Elements</a></li>
                                             <li><a href="#">Dropdown</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="index.php">Home</a></li>
+                                                    <li><a href="home.php">Home</a></li>
                                                     <li><a href="about.php">About Us</a></li>
                                                     <li><a href="blog-post.php">Blog Post</a></li>
                                                     <li><a href="receipe-post.php">Receipe Post</a></li>
@@ -123,7 +123,7 @@
                                                     <li><a href="elements.php">Elements</a></li>
                                                     <li><a href="#">Dropdown</a>
                                                         <ul class="dropdown">
-                                                            <li><a href="index.php">Home</a></li>
+                                                            <li><a href="home.php">Home</a></li>
                                                             <li><a href="about.php">About Us</a></li>
                                                             <li><a href="blog-post.php">Blog Post</a></li>
                                                             <li><a href="receipe-post.php">Receipe Post</a></li>
@@ -139,7 +139,7 @@
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="home.php">Home</a></li>
                                                 <li><a href="about.php">About Us</a></li>
                                                 <li><a href="blog-post.php">Blog Post</a></li>
                                                 <li><a href="receipe-post.php">Receipe Post</a></li>
@@ -148,7 +148,7 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="home.php">Home</a></li>
                                                 <li><a href="about.php">About Us</a></li>
                                                 <li><a href="blog-post.php">Blog Post</a></li>
                                                 <li><a href="receipe-post.php">Receipe Post</a></li>
@@ -157,7 +157,7 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagory</li>
-                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="home.php">Home</a></li>
                                                 <li><a href="about.php">About Us</a></li>
                                                 <li><a href="blog-post.php">Blog Post</a></li>
                                                 <li><a href="receipe-post.php">Receipe Post</a></li>
@@ -496,7 +496,7 @@
                     </div>
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.php"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
+                        <a href="home.php"><img src="../resources/bootstrap/img/core-img/logo.png" alt=""></a>
                     </div>
                     <!-- Copywrite -->
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

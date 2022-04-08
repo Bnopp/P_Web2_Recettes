@@ -53,7 +53,7 @@ class HomeController extends Controller {
         return $content;
     }
 
-        /**
+    /**
      * Check Form action
      *
      * @return string

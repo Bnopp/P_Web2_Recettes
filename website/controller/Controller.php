@@ -1,21 +1,20 @@
 <?php
-/**
- * Auteur : Serghei Diulgherov
- * Date: 04.04.2022
- * Contrôleur principal
- */
-
-abstract class Controller {
-
     /**
-     * Méthode permettant d'appeler l'action 
-     *
-     * @return mixed
+     * Auteur : Serghei Diulgherov
+     * Date: 04.04.2022
+     * Contrôleur principal
      */
-    public function display() {
 
-        $page = $_GET['action'] . "Display";
+    require_once('../data/data.php');
 
-        $this->$page();
+    class Controller {
+
+        //Variables
+        private $_dataHandler;
+
+        public function InitiateData()
+        {
+            $_dataHandler = new Data();
+        }
     }
-}
+?>
