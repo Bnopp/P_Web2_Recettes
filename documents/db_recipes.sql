@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 28 mars 2022 à 09:15
+-- Généré le : lun. 11 avr. 2022 à 09:22
 -- Version du serveur :  5.7.11
 -- Version de PHP : 8.0.1
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `db_recipes`
 --
-
-CREATE DATABASE db_recipes;
 
 -- --------------------------------------------------------
 
@@ -68,15 +66,25 @@ CREATE TABLE `t_recipe` (
   `title` varchar(255) NOT NULL,
   `ingredients` mediumtext NOT NULL,
   `preparation` mediumtext NOT NULL,
-  `image` varchar(255) DEFAULT NULL
+  `image` varchar(255) DEFAULT NULL,
+  `fkCategory` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_recipe`
 --
 
-INSERT INTO `t_recipe` (`idRecipe`, `title`, `ingredients`, `preparation`, `image`) VALUES
-(1, 'Croustillants de chèvre chaud, noix et magrets séchés', '4 rocamadours\r\n4 feuilles de pâte filo\r\n50 g de beurre fondu\r\n4 poignées de mâche ou trévise flamme\r\n100 g de magrets séchés\r\n12 noix fraîches décortiquées\r\n¼ de céleri boule épluché et lavé\r\n12,5 cl de vinaigre de cidre ou de noix\r\n37 cl d’huile d’olive\r\n62 g de miel\r\nQuelques baies de sichuan vert en poudre\r\nFleur de sel et poivre du moulin', '1.\r\nSur votre plan de travail, déposez 1 feuille de filo, nappez de beurre fondu et déposez au centre le rocamadour. Pliez la feuille autour du fromage et laissez de côté. Déposez sur la plaque et enfournez 8 minutes.\r\n\r\n2.\r\nMélangez le vinaigre et l’huile d’olive. Ajoutez le miel. Coupez les cerneaux de noix en petits morceaux et le céleri en fines lamelles à l’aide de la mandoline. Plongez les lamelles de céleri dans un bain d’eau avec des glaçons. Réservez dans une assiette.\r\n\r\n3.\r\nPlongez les croustillants dans l’huile chaude et laissez-les dorer. Égouttez-les et déposez-les sur une assiette recouverte d’un papier absorbant.\r\n\r\n4.\r\nAssaisonnez la salade et les lamelles de céleri avec la vinaigrette. Déposez-la dans un plat de présentation. Ajoutez les cerneaux de noix et les tranches de magrets. Ajoutez par-dessus les croustillants de chèvre et parsemez d’un peu de baies de sichuan en poudre.', 'croustillant-de-chevre-chaud.jpeg');
+INSERT INTO `t_recipe` (`idRecipe`, `title`, `ingredients`, `preparation`, `image`, `fkCategory`) VALUES
+(1, 'Shifu', 'Pain au pavot, 120g de poulet pané maison (CH), cheddar, tomate snackée, iceberg et une délicieuse sauce aigre-douce maison.\r\n', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage.\r\nbaisser la cuisson et commencer à dresser le burger en dorant le pain.\r\nmettre la sauce, les tomates, viande et la salade. C\'est prêt', 'shifu.jpeg', 2),
+(2, 'Aïron man', 'Pain au pavot, 160g de boeuf local, tomme au piment d’espelette, carottes, chou blanc et notre délicieuse aïoli maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage.\r\n	baisser la cuisson et commencer à dresser le burger en dorant le pain.\r\n	mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'aironMan.jpeg', 2),
+(3, 'Jacky', 'Pain au pavot, 160g de boeuf local, chorizo, fromage Pepper Jack, confit d’oignons, salade et notre délicieuse chipotle mayo maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'jacky.jpeg', 2),
+(4, 'Rösticlette', 'Pain au pavot, 160g de boeuf local et sa croûte aux poivres, fromage à raclette, galette de rösti, roquette et une délicieuse sauce maison aux champignons.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'rostiRaclette.jpeg', 2),
+(5, 'Honeywood', 'Pain  au pavot, 120g de poulet pané maison (CH), double gruyère AOC, tomate, oignons, iceberg et une délicieuse moutarde au miel maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'honeyWood.jpeg', 2),
+(6, 'Patrick', 'Pain au pavot, 160g de boeuf local, composée d’oignons rouges maison, salade et une délicieuse sauce au poivre vert maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'patrick.jpeg', 2),
+(7, 'Yukimura', 'Pain au pavot, 120g de poulet pané maison (CH), pickles de choux et carottes, iceberg et une délicieuse sauce Teriyaki maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'yukimura.jpeg', 2),
+(8, 'Geronimo', 'Pain au pavot, 160g de bison, bacon au sirop d’érable, cheddar, confit d’oignons, salade et une délicieuse sauce BBQ maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'geronimo.jpeg', 2),
+(9, 'Chicken Mcfly', 'Pain au pavot, 120g de poulet pané maison (CH), iceberg et sauce McFly.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'chickenMcFly.jpeg', 2),
+(10, 'Gilbear', 'Pain au pavot, 160g de bœuf local, croûte aux poivres, bacon, tomme à l’ail des ours, confit d’oignons, roquettes et une délicieuse sauce moutarde à l’ancienne & miel fait maison.', 'Selon cuisson demandée, cuire la viande. Après l\'avoir retournée, mettre le fromage. Baisser la cuisson et commencer à dresser le burger en dorant le pain. Mettre la sauce, les tomates, viande et la salade. C\'est prêt', 'gilbear.jpeg', 2);
 
 --
 -- Index pour les tables déchargées
@@ -98,7 +106,8 @@ ALTER TABLE `t_category`
 -- Index pour la table `t_recipe`
 --
 ALTER TABLE `t_recipe`
-  ADD PRIMARY KEY (`idRecipe`);
+  ADD PRIMARY KEY (`idRecipe`),
+  ADD KEY `fkCategory` (`fkCategory`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -120,7 +129,17 @@ ALTER TABLE `t_category`
 -- AUTO_INCREMENT pour la table `t_recipe`
 --
 ALTER TABLE `t_recipe`
-  MODIFY `idRecipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idRecipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `t_recipe`
+--
+ALTER TABLE `t_recipe`
+  ADD CONSTRAINT `t_recipe_ibfk_1` FOREIGN KEY (`fkCategory`) REFERENCES `t_category` (`idCategory`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,0 +1,60 @@
+<?php
+/**
+ * ETML
+ * Auteur : Serghei Diulgherov
+ * Date: 11.04.2022
+ * Group of methods allowing to retrieve data for the recipes
+ */
+
+ /**
+ * Modified by  : Serghei Diulgherov
+ * Date         : 11.04.2022
+ * Modifications:
+ *      Added   - getAll
+ *              - getOneRecipe
+ */
+
+//To DO
+// Complete comments on all methods + params and returns
+
+include_once 'Entity.php';
+
+require_once('../data/data.php');
+
+class RecipeRepository implements Entity 
+{
+
+    private $_pdoConnection = new Data();
+
+    /**
+     * Get all recipes
+     *
+     * @return array
+     */
+    public function getAll() 
+    {
+
+        $data = $this -> _pdoConnection -> querySimpleExecute('SELECT * FROM t_recipe');
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
+
+    /**
+     * Get one recipe
+     * 
+     * @param $idRecipe
+     * 
+     * @return array
+     */
+    public function getOneRecipe($idRecipe)
+    {
+
+        $binds['idRecipe'] = ['value' => $idRecipe, 'type' => PDO::PARAM_INT];
+
+        $data = $this -> _pdoConnection -> queryPrepareExecute('SELECT * FROM t_recipe WHERE idRecipe = :idRecipe', $binds);
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
+
+}
+?>

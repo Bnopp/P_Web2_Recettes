@@ -1,11 +1,19 @@
 <?php
 /**
- * Auteur : Cindy Hardegger
- * Date: 22.01.2019
- * Interface regroupant les méthodes à avoir dans chaque repository
+ * Auteur   : Serghei Diulgherov
+ * Date     : 11.04.2022
+ * Interface grouping all the methods needed in every repository
  */
 
-interface Entity {
+/**
+ * Modified by  : Serghei Diulgherov
+ * Date         : 11.04.2022
+ * Modifications:
+ *      Added   - getAll
+ */
 
-    public function findAll();
+interface Entity 
+{
+    public function getAll();
 }
+?>
