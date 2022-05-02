@@ -15,5 +15,7 @@
 interface Entity 
 {
     public function getAll();
+
+    public function getOne($id);
 }
 ?>

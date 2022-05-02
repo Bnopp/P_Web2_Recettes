@@ -15,7 +15,6 @@
  */
 
 //To DO
-// Complete comments on all methods + params and returns
 
 include_once 'Entity.php';
 
@@ -44,9 +43,9 @@ class RecipeRepository implements Entity
      * 
      * @param $idRecipe
      * 
-     * @return array
+     * @return array    => the id of the recipe as found in the Database
      */
-    public function getOneRecipe($idRecipe)
+    public function getOne($idRecipe)
     {
 
         $binds['idRecipe'] = ['value' => $idRecipe, 'type' => PDO::PARAM_INT];

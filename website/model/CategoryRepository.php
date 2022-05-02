@@ -15,7 +15,6 @@
  */
 
 //To DO
-// Complete comments on all methods + params and returns
 
 include_once 'Entity.php';
 
@@ -27,7 +26,7 @@ class CategoryRepository implements Entity
     private $_pdoConnection = new Data();
 
     /**
-     * Get all categories
+     * Get all recipe categories
      *
      * @return array
      */
@@ -40,13 +39,13 @@ class CategoryRepository implements Entity
     }
 
     /**
-     * Get one recipe
+     * Get one recipe category
      * 
-     * @param $idCategory
+     * @param $idCategory   => the id of the category as found in the Database
      * 
      * @return array
      */
-    public function getOneCategory($idCategory)
+    public function getOne($idCategory)
     {
         
         $binds['idCategory'] = ['value' => $idCategory, 'type' => PDO::PARAM_INT];

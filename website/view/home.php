@@ -9,9 +9,9 @@
     include('default/head.html');
     include('default/header.html');
 
-    require_once('../controller/controller.php')
+    require_once('../model/controller.php');
 
-
+    $controller = new Controller();
 ?>
 
     <!-- ##### Hero Area Start ##### -->
@@ -23,7 +23,7 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Delicios HomeMade Burger</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
                                 <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
                             </div>
