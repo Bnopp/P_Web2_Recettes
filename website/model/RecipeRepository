@@ -26,7 +26,7 @@ class RecipeRepository implements Entity
     private $_pdoConnection = new Data();
 
     /**
-     * Get all recipes
+     * Getting all the data from the table t_recipe
      *
      * @return array
      */
@@ -41,9 +41,9 @@ class RecipeRepository implements Entity
     /**
      * Get one recipe
      * 
-     * @param $idRecipe
+     * @param $idRecipe     => the id of the recipe as found in the Database
      * 
-     * @return array    => the id of the recipe as found in the Database
+     * @return array    
      */
     public function getOne($idRecipe)
     {

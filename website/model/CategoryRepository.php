@@ -41,7 +41,7 @@ class CategoryRepository implements Entity
     /**
      * Get one recipe category
      * 
-     * @param $idCategory   => the id of the category as found in the Database
+     * @param idCategory   => the id of the category as found in the Database
      * 
      * @return array
      */

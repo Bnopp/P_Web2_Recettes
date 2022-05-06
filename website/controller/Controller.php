@@ -9,5 +9,15 @@
 class Controller 
 {
     
+    /**
+     * Method allowing  to call for an action
+     * 
+     * @return void
+     */
+    public function display(){
+        $page = $_GET['action'] . "Display";
+
+        $this->$page();
+    }
 }
 ?>

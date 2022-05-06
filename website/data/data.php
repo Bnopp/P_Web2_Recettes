@@ -65,7 +65,7 @@ class Data
     /**
      * Method prepares executes a simple request (no variables) to the database (ex. no WHERE)
      * 
-     * @param $query    => the SQL statement to prepare and execute
+     * @param query    => the SQL statement to prepare and execute
      * 
      * @return mixed    => mysqli|false
      */
@@ -85,8 +85,8 @@ class Data
     /**
      * Method allows to prepare, bind and execute a request (SELECT with WHERE, INSERT, UPDATE, DELETE)
      * 
-     * @param $query    => the SQL statement to prepare and execute
-     * @param $binds    => SQL placeholders
+     * @param query    => the SQL statement to prepare and execute
+     * @param binds    => SQL placeholders
      * 
      * @return mixed    => PDOStatement|PDOException
      */
@@ -114,7 +114,7 @@ class Data
     /**
      * Method formats data from the request in an array
      * 
-     * @param $req      => PDOStatement to format to an array
+     * @param req      => PDOStatement to format to an array
      * 
      * @return array
      */
@@ -128,7 +128,7 @@ class Data
     /**
      * Method closes the cursor so the statement can be executed again
      * 
-     * @param $req      => PDOStatement to format to an array
+     * @param req      => PDOStatement to format to an array
      * 
      * @return bool
      */
