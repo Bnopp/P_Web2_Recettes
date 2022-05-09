@@ -1,11 +1,31 @@
 /*
  * ETML
- * Auteur : Cindy Hardegger
- * Date: 22.01.2019
- * Feuille de style du CRM
+ * Auteur : Serghei Diulgherov
+ * Date: 09.05.2022
+ * Feuille de style
  */
 
  .glyphicon {
     color: #333;
 }
 
+.footerLogo a img {
+    width: 80px;
+}
+
+.copyright {
+    font-size: x-small;
+}
+
+@media (min-width: 992px) {
+    .searchbar
+    {
+        flex-grow: 1;
+        max-width: none;
+    }
+
+    .searchBtn
+    {
+        width: 100%;
+    }
+}

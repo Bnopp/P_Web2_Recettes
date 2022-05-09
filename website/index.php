@@ -18,6 +18,7 @@ date_default_timezone_set('Europe/Zurich');
 
 include_once 'controller/Controller.php';
 include_once 'controller/HomeController.php';
+include_once 'controller/RecipeController.php';
 
 Class MainController 
 {
@@ -37,7 +38,6 @@ Class MainController
         }
 
         $currentLink = $this->menuSelected($_GET['controller']);
-        var_dump($currentLink);
         $this->viewBuild($currentLink);
     }
 
@@ -54,6 +54,9 @@ Class MainController
         {
             case 'home':
                 $link = new HomeController();
+                break;
+            case 'recipe':
+                $link = new RecipeController();
                 break;
             default:
                 $link = new HomeController();
@@ -74,10 +77,10 @@ Class MainController
     {
         $content = $currentPage->display();
 
-        include(dirname(__FILE__) . '/view/default/head.html');
-        include(dirname(__FILE__) . '/view/default/header.html');
+        include(dirname(__FILE__) . '/view/head.html');
+        include(dirname(__FILE__) . '/view/header.html');
         echo $content;
-        include(dirname(__FILE__) . '/view/default/footer.html');
+        include(dirname(__FILE__) . '/view/footer.html');
     }
 }
 

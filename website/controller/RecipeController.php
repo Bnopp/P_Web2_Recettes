@@ -1,12 +1,12 @@
 <?php
 /**
  * Auteur   : Serghei Diulgherov
- * Date     : 06.05.2022
- * Home 
+ * Date     : 09.05.2022
+ * Recipes 
  */
 
 
-class HomeController extends Controller 
+class RecipeController extends Controller 
 {
     /**
      * It takes the value of the action parameter in the URL and appends "Action" to it. Then it calls
@@ -27,11 +27,11 @@ class HomeController extends Controller
     /**
      * It takes a file, evaluates it, and returns the content.
      * 
-     * @return content The content of the view file.
+     * @return content The content of the view detail file.
      */
-    private function indexAction()
+    private function detailAction()
     {
-        $view = file_get_contents('view/page/home/index.php');
+        $view = file_get_contents('view/page/recipe/detail.php');
 
         ob_start();
         eval('?>' . $view);
@@ -39,5 +39,21 @@ class HomeController extends Controller
 
         return $content;
     }
+    
+    /**
+     * It takes a file, evaluates it, and returns the content.
+     * 
+     * @return content The content of the view list file.
+     */
+    private function listAction()
+    {
+        $view = file_get_contents('view/page/recipe/list.php');
+
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    } 
 }
 ?>
