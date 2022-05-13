@@ -18,12 +18,19 @@
 
 include_once 'Entity.php';
 
-require_once('../data/data.php');
+require_once 'data/data.php';
 
 class RecipeRepository implements Entity 
 {
+    private $_pdoConnection;
 
-    private $_pdoConnection = new Data();
+    /**
+     * Main constructor
+     */
+    public function __construct()
+    {
+        $this -> _pdoConnection = Data::getConn();
+    }
 
     /**
      * Getting all the data from the table t_recipe
@@ -32,7 +39,6 @@ class RecipeRepository implements Entity
      */
     public function getAll() 
     {
-
         $data = $this -> _pdoConnection -> querySimpleExecute('SELECT * FROM t_recipe');
 
         return $this -> _pdoConnection -> formatData($data);

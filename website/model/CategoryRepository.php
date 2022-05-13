@@ -18,12 +18,19 @@
 
 include_once 'Entity.php';
 
-require_once('../data/data.php');
+require_once 'data/data.php';
 
 class CategoryRepository implements Entity 
 {
+    private $_pdoConnection;
 
-    private $_pdoConnection = new Data();
+    /**
+     * Main constructor
+     */
+    public function __construct()
+    {
+        $this -> _pdoConnection = Data::getConn();
+    }
 
     /**
      * Get all recipe categories

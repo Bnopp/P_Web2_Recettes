@@ -23,21 +23,35 @@
  *              - unsetData
  */
 
-//To DO
-
-require_once("../resources/config.php");
-
 class Data 
 {
     //Variables
+    private static $obj;
     private $_dbConnection;
+    private $_config;
 
     /**
      * Main constructor
      */
-    public function __construct()
-    {
+    private final function __construct()
+    {   
+        $this ->_config = require_once 'resources/config.php';
         $this -> DBConnection();
+    }
+
+
+    /**
+     * If the object is not set, create a new object and return it. If the object is set, return the
+     * object.
+     * Singleton pattern
+     * 
+     * @return Data
+     */
+    public static function getConn() {
+        if(!isset(self::$obj)) {
+            self::$obj = new Data();
+        }
+        return self::$obj;
     }
 
     /**
@@ -46,14 +60,18 @@ class Data
      * @return PDO_Connection
      */
     public function DBConnection() {
-        $this -> _dbConnection = null;
         try
         {
-            $this -> _dbConnection = new PDO(
-                "mysql:host=" . $this -> CONFIG['host'] . 
-                ";dbname=" . $this -> CONFIG['dbname'], 
-                $this -> CONFIG['username'], 
-                $this -> CONFIG['password']);
+            if (!isset($this->_dbConnection))
+            {
+                $this -> _dbConnection = new PDO(
+                    "mysql:host=" . $this ->_config['host'] . 
+                    ";dbname=" . $this ->_config['dbName'] .
+                    ";charset=" . $this ->_config['charset'], 
+                    $this ->_config['username'], 
+                    $this ->_config['password']);
+            }
+            
         }
         catch(PDOException $exception)
         {

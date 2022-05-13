@@ -28,4 +28,10 @@
     {
         width: 100%;
     }
+
+    .single-best-receipe-area img{
+        height: 265px;
+        width: 350px;
+        object-fit: cover;
+    }
 }

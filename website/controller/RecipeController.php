@@ -4,7 +4,8 @@
  * Date     : 09.05.2022
  * Recipes 
  */
-
+include_once 'model/CategoryRepository.php';
+include_once 'model/RecipeRepository.php';
 
 class RecipeController extends Controller 
 {
@@ -47,6 +48,12 @@ class RecipeController extends Controller
      */
     private function listAction()
     {
+        $categoryRepository = new CategoryRepository();
+        define('CATEGORIES', $categoryRepository->getAll());
+
+        $recipeRepository = new RecipeRepository();
+        define('RECIPES', $recipeRepository->getAll());
+
         $view = file_get_contents('view/page/recipe/list.php');
 
         ob_start();
