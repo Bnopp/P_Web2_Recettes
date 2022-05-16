@@ -52,7 +52,19 @@ class RecipeController extends Controller
         define('CATEGORIES', $categoryRepository->getAll());
 
         $recipeRepository = new RecipeRepository();
-        define('RECIPES', $recipeRepository->getAll());
+
+        if (count($_POST)> 0)
+        {
+            $search = preg_replace('/\s+/', ' ', $_POST["search"]);
+            if (preg_match("/^((\p{L}{1,})\s{0,1})*$/u", $search))
+                define('RECIPES', $recipeRepository->getAllBySearch($_POST["select"], $_POST["search"]));
+            //else
+                //define('RECIPES', $recipeRepository->getAllBySearch($_POST["select"], "non-existant"));
+        }
+        else
+        {
+            define('RECIPES', $recipeRepository->getAll());
+        }
 
         $view = file_get_contents('view/page/recipe/list.php');
 

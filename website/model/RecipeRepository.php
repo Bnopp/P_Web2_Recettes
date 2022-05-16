@@ -45,6 +45,29 @@ class RecipeRepository implements Entity
     }
 
     /**
+     * It takes a search term, and returns all the recipes that have that search term in their title.
+     * 
+     * @param search the search term
+     * 
+     * @return array
+     */
+    public function getAllBySearch($category, $search) 
+    {
+        $type = $category;
+
+        if ($type == "0")
+        {
+            $data = $this -> _pdoConnection -> querySimpleExecute("SELECT * FROM t_recipe WHERE title LIKE '%" . $search . "%'");
+        }
+        else
+        {
+            $data = $this -> _pdoConnection -> querySimpleExecute("SELECT * FROM t_recipe WHERE fkCategory = $type AND title LIKE '%" . $search . "%'");
+        }
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
+
+    /**
      * Get one recipe
      * 
      * @param $idRecipe     => the id of the recipe as found in the Database

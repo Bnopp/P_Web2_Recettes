@@ -1,4 +1,5 @@
 <!-- ##### Breadcumb Area Start ##### -->
+
 <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -15,15 +16,15 @@
         <!-- Receipe Post Search -->
         <div class="receipe-post-search mb-80">
             <div class="container">
-                <form action="#" method="post">
+                <form action="index.php?controller=recipe&action=list" method="post">
                     <div class="row">
                         <div class="col-12 col-lg-3">
-                            <select name="select1" id="select1">
+                            <select name="select" id="select">
                                 <option value="0">Toutes les recettes</option>
                                 <?php
                                     foreach (CATEGORIES as $category)
                                     {
-                                        echo '<option value="' . htmlspecialchars($category['idCategroy']) .'">' . htmlspecialchars($category['name']) . '</option>';
+                                        echo '<option value="' . htmlspecialchars($category['idCategory']) .'">' . htmlspecialchars($category['name']) . '</option>';
                                     }
                                 ?>
                             </select>
@@ -32,7 +33,7 @@
                             <input type="search" name="search" placeholder="Rechercher des recettes" >
                         </div>
                         <div class="col-12 col-lg-3 text-right">
-                            <button class="btn delicious-btn searchBtn" onclick="search()">Rechercher</button>
+                            <button type="submit" name="submit" class="btn delicious-btn searchBtn">Rechercher</button>
                         </div>
                     </div>
                 </form>
@@ -41,25 +42,28 @@
         
         <div class="container">
             <div class="row">
-                <?php foreach (RECIPES as $recipe): ?>
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="single-best-receipe-area mb-30">
-                            <img src="resources/image/imgMainMeal/<?php echo $recipe['image']?>" style="height:10;"alt="Meal Image">
-                            <div class="receipe-content">
-                                <a href="receipe-post.php">
-                                    <h5><?php echo $recipe['title']?></h5>
-                                </a>
-                                <div class="ratings">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                <?php if (count(RECIPES)>0): ?>
+                    <?php foreach (RECIPES as $recipe): ?>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="single-best-receipe-area mb-30">
+                                <img src="resources/image/imgMainMeal/<?php echo $recipe['image']?>" style="height:10;"alt="Meal Image">
+                                <div class="receipe-content">
+                                    <a href="receipe-post.php">
+                                        <h5><?php echo $recipe['title']?></h5>
+                                    </a>
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach ?>
+                    <?php endforeach ?>
+                <?php else : print "<h3>Aucune recette ne correspond à votre recherche</h3>" ?>
+                <?php endif ?>
             </div>
         </div>
     </div>
