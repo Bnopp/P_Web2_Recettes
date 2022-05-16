@@ -1,46 +1,11 @@
 <!-- ##### Breadcumb Area End ##### -->
 <div class="receipe-post-area section-padding-80">
-    <!-- Receipe Post Search -->
-    <div class="receipe-post-search mb-80">
-        <div class="container">
-            <form action="#" method="post">
-                <div class="row">
-                    <div class="col-12 col-lg-3">
-                        <select name="select1" id="select1">
-                            <option value="1">All Receipies Categories</option>
-                            <option value="1">All Receipies Categories 2</option>
-                            <option value="1">All Receipies Categories 3</option>
-                            <option value="1">All Receipies Categories 4</option>
-                            <option value="1">All Receipies Categories 5</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <select name="select1" id="select2">
-                            <option value="1">All Receipies Categories</option>
-                            <option value="1">All Receipies Categories 2</option>
-                            <option value="1">All Receipies Categories 3</option>
-                            <option value="1">All Receipies Categories 4</option>
-                            <option value="1">All Receipies Categories 5</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <input type="search" name="search" placeholder="Search Receipies">
-                    </div>
-                    <div class="col-12 col-lg-3 text-right">
-                        <button type="submit" class="btn delicious-btn">Search</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
     <!-- Receipe Slider -->
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="receipe-slider owl-carousel">
-                    <img src="../resources/bootstrap/img/bg-img/bg5.jpg" alt="">
-                    <img src="../resources/bootstrap/img/bg-img/bg5.jpg" alt="">
-                    <img src="../resources/bootstrap/img/bg-img/bg5.jpg" alt="">
+                    <img src="resources/image/imgMainMeal/<?php print RECIPE[0]['image']?>" style="height: 400px; object-fit:cover;" alt="Meal image">
                 </div>
             </div>
         </div>
@@ -51,8 +16,7 @@
             <div class="row">
                 <div class="col-12 col-md-8">
                     <div class="receipe-headline my-5">
-                        <span>April 05, 2018</span>
-                        <h2>Vegetarian cheese salad</h2>
+                        <h2><?php print RECIPE[0]['title']?></h2>
                         <div class="receipe-duration">
                             <h6>Prep: 15 mins</h6>
                             <h6>Cook: 30 mins</h6>
@@ -75,26 +39,14 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-8">
-                    <!-- Single Preparation Step -->
-                    <div class="single-preparation-step d-flex">
-                        <h4>01.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    </div>
-                    <!-- Single Preparation Step -->
-                    <div class="single-preparation-step d-flex">
-                        <h4>02.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    </div>
-                    <!-- Single Preparation Step -->
-                    <div class="single-preparation-step d-flex">
-                        <h4>03.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    </div>
-                    <!-- Single Preparation Step -->
-                    <div class="single-preparation-step d-flex">
-                        <h4>04.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    </div>
+                    <?php $steps = explode(".", RECIPE[0]["preparation"]); $counter = 0;?>
+                    <?php foreach ($steps as $step): ?>
+                        <!-- Single Preparation Step -->
+                        <div class="single-preparation-step d-flex">
+                            <h4><?php $counter++; print $counter; ?></h4>
+                            <p><?php print $step?></p>
+                        </div>
+                    <?php endforeach ?>
                 </div>
                 <!-- Ingredients -->
                 <div class="col-12 col-lg-4">

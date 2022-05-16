@@ -48,7 +48,7 @@
                             <div class="single-best-receipe-area mb-30">
                                 <img src="resources/image/imgMainMeal/<?php echo $recipe['image']?>" style="height:10;"alt="Meal Image">
                                 <div class="receipe-content">
-                                    <a href="receipe-post.php">
+                                    <a href="index.php?controller=recipe&action=detail&id=<?php echo $recipe['idRecipe'] ?>">
                                         <h5><?php echo $recipe['title']?></h5>
                                     </a>
                                     <div class="ratings">

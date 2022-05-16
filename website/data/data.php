@@ -111,7 +111,7 @@ class Data
     public function queryPrepareExecute($query, $binds = null){
         try
         {
-            $req = $this->connector->prepare($query);
+            $req = $this->_dbConnection->prepare($query);
 
             if($binds != null){
                 foreach($binds as $key => $value){

@@ -32,6 +32,9 @@ class RecipeController extends Controller
      */
     private function detailAction()
     {
+        $recipeRepository = new RecipeRepository();
+        define('RECIPE', $recipeRepository->getOne($_GET['id']));
+
         $view = file_get_contents('view/page/recipe/detail.php');
 
         ob_start();
@@ -58,8 +61,8 @@ class RecipeController extends Controller
             $search = preg_replace('/\s+/', ' ', $_POST["search"]);
             if (preg_match("/^((\p{L}{1,})\s{0,1})*$/u", $search))
                 define('RECIPES', $recipeRepository->getAllBySearch($_POST["select"], $_POST["search"]));
-            //else
-                //define('RECIPES', $recipeRepository->getAllBySearch($_POST["select"], "non-existant"));
+            else
+                define('RECIPES', array());
         }
         else
         {
