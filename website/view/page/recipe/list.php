@@ -24,7 +24,7 @@
                                 <?php
                                     foreach (CATEGORIES as $category)
                                     {
-                                        echo '<option value="' . htmlspecialchars($category['idCategory']) .'">' . htmlspecialchars($category['name']) . '</option>';
+                                        echo '<option value="' . htmlspecialchars($category['idCategory']) .'">' . htmlspecialchars($category['catName']) . '</option>';
                                     }
                                 ?>
                             </select>
@@ -46,17 +46,40 @@
                     <?php foreach (RECIPES as $recipe): ?>
                         <div class="col-12 col-sm-6 col-lg-4">
                             <div class="single-best-receipe-area mb-30">
-                                <img src="resources/image/imgMainMeal/<?php echo $recipe['image']?>" style="height:10;"alt="Meal Image">
+                                <img src="resources/image/imgMainMeal/<?php echo $recipe['recImage']?>" style="height:10;"alt="Meal Image">
                                 <div class="receipe-content">
                                     <a href="index.php?controller=recipe&action=detail&id=<?php echo $recipe['idRecipe'] ?>">
-                                        <h5><?php echo $recipe['title']?></h5>
+                                        <h5><?php echo $recipe['recTitle']?></h5>
                                     </a>
                                     <div class="ratings">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <?php 
+                                            if (count(RATINGS[$recipe['idRecipe']])>0){
+                                                $totalRatings = array();
+                                                foreach (RATINGS[$recipe['idRecipe']] as $ratings)
+                                                {
+                                                    foreach($ratings as $key => $value) 
+                                                    {
+                                                        array_push($totalRatings, $value);
+                                                    }
+                                                }
+                                                $ratingAVG = round(array_sum($totalRatings)/count($totalRatings), 0);
+                                                for ($i = 1; $i <= 5; $i++)
+                                                {
+                                                    if ($ratingAVG >= $i)
+                                                    {
+                                                        print '<i class="fa fa-star" aria-hidden="true"></i>';
+                                                    }
+                                                    else
+                                                    {
+                                                        print '<i class="fa fa-star-o" aria-hidden="true"></i>';
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                print "Cette recette n'a acune note pour le moment";
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                             </div>

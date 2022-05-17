@@ -57,11 +57,11 @@ class RecipeRepository implements Entity
 
         if ($type == "0")
         {
-            $data = $this -> _pdoConnection -> querySimpleExecute("SELECT * FROM t_recipe WHERE title LIKE '%" . $search . "%'");
+            $data = $this -> _pdoConnection -> querySimpleExecute("SELECT * FROM t_recipe WHERE recTitle LIKE '%" . $search . "%'");
         }
         else
         {
-            $data = $this -> _pdoConnection -> querySimpleExecute("SELECT * FROM t_recipe WHERE fkCategory = $type AND title LIKE '%" . $search . "%'");
+            $data = $this -> _pdoConnection -> querySimpleExecute("SELECT * FROM t_recipe WHERE fkCategory = $type AND recTitle LIKE '%" . $search . "%'");
         }
 
         return $this -> _pdoConnection -> formatData($data);

@@ -6,6 +6,7 @@
  */
 include_once 'model/CategoryRepository.php';
 include_once 'model/RecipeRepository.php';
+include_once 'model/RatingRepository.php';
 
 class RecipeController extends Controller 
 {
@@ -68,6 +69,14 @@ class RecipeController extends Controller
         {
             define('RECIPES', $recipeRepository->getAll());
         }
+
+        $ratingRepository = new RatingRepository();
+        $ratings = array();
+        foreach (RECIPES as $recipe)
+        {
+            $ratings += array($recipe['idRecipe']=>$ratingRepository->getOne($recipe['idRecipe']));
+        }
+        define('RATINGS', $ratings);
 
         $view = file_get_contents('view/page/recipe/list.php');
 

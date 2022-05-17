@@ -2,7 +2,7 @@
 <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(../resources/bootstrap/img/bg-img/bg1.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(resources/bootstrap/img/bg-img/bg1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -17,7 +17,7 @@
             </div>
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(../resources/bootstrap/img/bg-img/bg6.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(resources/bootstrap/img/bg-img/bg6.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -32,7 +32,7 @@
             </div>
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(../resources/bootstrap/img/bg-img/bg7.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(resources/bootstrap/img/bg-img/bg7.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -56,7 +56,7 @@
                 <!-- Top Catagory Area -->
                 <div class="col-12 col-lg-6">
                     <div class="single-top-catagory">
-                        <img src="../resources/bootstrap/img/bg-img/bg2.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/bg2.jpg" alt="">
                         <!-- Content -->
                         <div class="top-cta-content">
                             <h3>Strawberry Cake</h3>
@@ -68,7 +68,7 @@
                 <!-- Top Catagory Area -->
                 <div class="col-12 col-lg-6">
                     <div class="single-top-catagory">
-                        <img src="../resources/bootstrap/img/bg-img/bg3.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/bg3.jpg" alt="">
                         <!-- Content -->
                         <div class="top-cta-content">
                             <h3>Chinesse Noodles</h3>
@@ -97,7 +97,7 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="../resources/bootstrap/img/bg-img/r1.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/r1.jpg" alt="">
                         <div class="receipe-content">
                             <a href="receipe-post.php">
                                 <h5>Sushi Easy Receipy</h5>
@@ -116,7 +116,7 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="../resources/bootstrap/img/bg-img/r2.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/r2.jpg" alt="">
                         <div class="receipe-content">
                             <a href="receipe-post.php">
                                 <h5>Homemade Burger</h5>
@@ -135,7 +135,7 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="../resources/bootstrap/img/bg-img/r3.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/r3.jpg" alt="">
                         <div class="receipe-content">
                             <a href="receipe-post.php">
                                 <h5>Vegan Smoothie</h5>
@@ -154,7 +154,7 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="../resources/bootstrap/img/bg-img/r4.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/r4.jpg" alt="">
                         <div class="receipe-content">
                             <a href="receipe-post.php">
                                 <h5>Calabasa soup</h5>
@@ -173,7 +173,7 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="../resources/bootstrap/img/bg-img/r5.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/r5.jpg" alt="">
                         <div class="receipe-content">
                             <a href="receipe-post.php">
                                 <h5>Homemade Breakfast</h5>
@@ -192,7 +192,7 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="../resources/bootstrap/img/bg-img/r6.jpg" alt="">
+                        <img src="resources/bootstrap/img/bg-img/r6.jpg" alt="">
                         <div class="receipe-content">
                             <a href="receipe-post.php">
                                 <h5>Healthy Fruit Desert</h5>
@@ -239,7 +239,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr1.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr1.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -264,7 +264,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr2.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr2.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -289,7 +289,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr3.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr3.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -314,7 +314,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr4.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr4.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -339,7 +339,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr5.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr5.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -364,7 +364,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr6.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr6.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -389,7 +389,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr7.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr7.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -414,7 +414,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr8.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr8.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
@@ -439,7 +439,7 @@
                     <div class="single-small-receipe-area d-flex">
                         <!-- Receipe Thumb -->
                         <div class="receipe-thumb">
-                            <img src="../resources/bootstrap/img/bg-img/sr9.jpg" alt="">
+                            <img src="resources/bootstrap/img/bg-img/sr9.jpg" alt="">
                         </div>
                         <!-- Receipe Content -->
                         <div class="receipe-content">
