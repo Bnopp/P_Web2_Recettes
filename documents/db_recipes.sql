@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 17, 2022 at 08:21 PM
+-- Generation Time: May 18, 2022 at 08:58 PM
 -- Server version: 5.7.11
 -- PHP Version: 8.0.1
 
@@ -58,6 +58,29 @@ INSERT INTO `t_category` (`idCategory`, `catName`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `t_comment`
+--
+
+CREATE TABLE `t_comment` (
+  `idComment` int(11) NOT NULL,
+  `comName` tinytext NOT NULL,
+  `comEmail` tinytext NOT NULL,
+  `comSubject` tinytext NOT NULL,
+  `comMessage` mediumtext NOT NULL,
+  `fkRecipe` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_comment`
+--
+
+INSERT INTO `t_comment` (`idComment`, `comName`, `comEmail`, `comSubject`, `comMessage`, `fkRecipe`) VALUES
+(7, 'Serghei Diulgherov', 'sergheidiulgherov@gmail.com', 'Testing website', 'efsf', 2),
+(8, 'Serghei Diulgherov', 'sergheidiulgherov@gmail.com', 'Testing website', 'Test de commentaire 2.0', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `t_rating`
 --
 
@@ -72,8 +95,9 @@ CREATE TABLE `t_rating` (
 --
 
 INSERT INTO `t_rating` (`idRating`, `ratRating`, `fkRecipe`) VALUES
-(1, '2.0', 1),
-(2, '4.1', 1);
+(43, '1.0', 8),
+(44, '5.0', 8),
+(45, '3.0', 8);
 
 -- --------------------------------------------------------
 
@@ -123,6 +147,13 @@ ALTER TABLE `t_category`
   ADD PRIMARY KEY (`idCategory`);
 
 --
+-- Indexes for table `t_comment`
+--
+ALTER TABLE `t_comment`
+  ADD PRIMARY KEY (`idComment`),
+  ADD KEY `fkRecipe` (`fkRecipe`);
+
+--
 -- Indexes for table `t_rating`
 --
 ALTER TABLE `t_rating`
@@ -153,10 +184,16 @@ ALTER TABLE `t_category`
   MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `t_comment`
+--
+ALTER TABLE `t_comment`
+  MODIFY `idComment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `t_rating`
 --
 ALTER TABLE `t_rating`
-  MODIFY `idRating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idRating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `t_recipe`
@@ -167,6 +204,12 @@ ALTER TABLE `t_recipe`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `t_comment`
+--
+ALTER TABLE `t_comment`
+  ADD CONSTRAINT `t_comment_ibfk_1` FOREIGN KEY (`fkRecipe`) REFERENCES `t_recipe` (`idRecipe`);
 
 --
 -- Constraints for table `t_rating`

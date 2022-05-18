@@ -22,11 +22,38 @@
                 <div class="col-12 col-md-4">
                     <div class="receipe-ratings text-right my-5">
                         <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <?php
+                                if (count(RATINGS)>0){
+                                    $totalRatings = array();
+                                    foreach (RATINGS as $ratings)
+                                    {
+                                        foreach($ratings as $key => $value) 
+                                        {
+                                            array_push($totalRatings, $value);
+                                        }
+                                    }
+                                    $ratingAVG = round(array_sum($totalRatings)/count($totalRatings), 0);
+                                    for ($i = 1; $i <= 5; $i++)
+                                    {
+                                        if ($ratingAVG >= $i)
+                                        {
+                                            print '<a href="index.php?controller=recipe&action=detail&id=' . RECIPE[0]['idRecipe'] . '&setRating=' . $i .'"><i class="fa fa-star" aria-hidden="true"></i></a>';
+                                        }
+                                        else
+                                        {
+                                            print '<a href="index.php?controller=recipe&action=detail&id=' . RECIPE[0]['idRecipe'] . '&setRating=' . $i .'"><i class="fa fa-star-o" aria-hidden="true"></i></a>';
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    for ($i = 1; $i <= 5; $i ++)
+                                    {
+                                        print '<a href="index.php?controller=recipe&action=detail&id=' . RECIPE[0]['idRecipe'] . '&setRating=' . $i .'"><i class="fa fa-star-o" aria-hidden="true"></i></a>';
+                                    }
+                                    print "<br>Cette recette n'a acune note pour le moment";
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -67,22 +94,22 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form action="#" method="post">
+                        <form action="index.php?controller=recipe&action=detail&id=<?php print RECIPE[0]['idRecipe']; ?>&comment=true" method="post">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                    <input type="text" class="form-control" name="name" placeholder="Nom">
                                 </div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <input type="email" class="form-control" name="email" placeholder="E-mail">
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" placeholder="Sujet">
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    <textarea name="message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn delicious-btn mt-30" type="submit">Post Comments</button>
+                                    <button class="btn delicious-btn mt-30" type="submit">Envoyer</button>
                                 </div>
                             </div>
                         </form>

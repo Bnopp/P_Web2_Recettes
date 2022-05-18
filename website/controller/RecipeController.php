@@ -7,6 +7,7 @@
 include_once 'model/CategoryRepository.php';
 include_once 'model/RecipeRepository.php';
 include_once 'model/RatingRepository.php';
+include_once 'model/CommentRepository.php';
 
 class RecipeController extends Controller 
 {
@@ -35,6 +36,37 @@ class RecipeController extends Controller
     {
         $recipeRepository = new RecipeRepository();
         define('RECIPE', $recipeRepository->getOne($_GET['id']));
+
+        $ratingRepository = new RatingRepository();
+        define('RATINGS', $ratingRepository->getOne($_GET['id']));
+
+        
+        /* A function that allows the user to rate a recipe. */
+        if (isset($_GET['setRating']))
+        {
+            $ratingRepository->addOne($_GET['id'], $_GET['setRating']);
+
+            $uri = parse_url($_SERVER['REQUEST_URI']);
+            parse_str($uri['query'], $uriVar);
+            unset($uriVar['setRating']);
+            $uriQuery = http_build_query($uriVar);
+            $url = "index.php?$uriQuery";
+            header("Location: $url");
+        }
+
+        $commentRepository = new CommentRepository();
+
+        /* A function that allows the user to comment a recipe. */
+        if (isset($_GET['comment']) && $_GET['comment'] == TRUE)
+        {
+            $commentRepository->addOne($_GET['id'], $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message']);
+            $uri = parse_url($_SERVER['REQUEST_URI']);
+            parse_str($uri['query'], $uriVar);
+            unset($uriVar['comment']);
+            $uriQuery = http_build_query($uriVar);
+            $url = "index.php?$uriQuery";
+            header("Location: $url");
+        }
 
         $view = file_get_contents('view/page/recipe/detail.php');
 

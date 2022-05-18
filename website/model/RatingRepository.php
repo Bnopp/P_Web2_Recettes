@@ -43,10 +43,27 @@ class RatingRepository implements Entity
      */
     public function getOne($idRecipe)
     {
-
         $binds['idRecipe'] = ['value' => $idRecipe, 'type' => PDO::PARAM_INT];
 
         $data = $this -> _pdoConnection -> queryPrepareExecute('SELECT ratRating FROM t_rating WHERE fkRecipe = :idRecipe', $binds);
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
+
+    /**
+     * It adds a rating to a recipe
+     * 
+     * @param idRecipe the id of the recipe
+     * @param rating 1-5
+     * 
+     * @return array as data is being returned in an array.
+     */
+    public function addOne($idRecipe, $rating)
+    {
+        $binds['idRecipe'] = ['value' => $idRecipe, 'type' => PDO::PARAM_INT];
+        $binds['rating'] = ['value' => $rating, 'type' => PDO::PARAM_INT];
+
+        $data = $this -> _pdoConnection -> queryPrepareExecute('INSERT INTO t_rating (ratRating, fkRecipe) VALUES (:rating, :idRecipe)', $binds);
 
         return $this -> _pdoConnection -> formatData($data);
     }
