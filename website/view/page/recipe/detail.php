@@ -75,10 +75,11 @@
                         <h4>Ingredients</h4>
                         <?php $ingredients = explode(",", RECIPE[0]["recIngredients"]); $counter = 0;?>
                         <?php foreach ($ingredients as $ingredient): ?>
+                            <?php $counter++;?>
                             <!-- Custom Checkbox -->
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1"><?php print $ingredient?></label>
+                                <input type="checkbox" class="custom-control-input" id="customCheck<?php print $counter?>">
+                                <label class="custom-control-label" for="customCheck<?php print $counter?>"><?php print $ingredient?></label>
                             </div>
                         <?php endforeach ?>
                     </div>

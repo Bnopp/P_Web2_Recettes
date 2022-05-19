@@ -27,11 +27,27 @@ class HomeController extends Controller
     /**
      * It takes a file, evaluates it, and returns the content.
      * 
-     * @return content The content of the view file.
+     * @return content of the view file.
      */
     private function indexAction()
     {
         $view = file_get_contents('view/page/home/index.php');
+
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
+
+    /**
+     * It takes a file, evaluates it, and returns the content.
+     * 
+     * @return content of the contact page.
+     */
+    private function contactAction()
+    {
+        $view = file_get_contents('view/page/home/contact.php');
 
         ob_start();
         eval('?>' . $view);
