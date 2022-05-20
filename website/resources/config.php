@@ -23,11 +23,17 @@
  */
 
 $CONFIG = array(
-    'host'      => 'localhost',
-    'dbName'    => 'db_recipes',
-    'username'  => 'root',
-    'password'  => 'root',
-    'charset'   => 'utf8'
+    'host'          => 'localhost',
+    'dbName'        => 'db_recipes',
+    'username'      => 'root',
+    'password'      => 'root',
+    'charset'       => 'utf8',
+    'smtpServer'    => 'smtp.gmail.com',
+    'smtpUsername'  => 'recipe.smtp.sender@gmail.com',
+    'smtpPassword'  => 'kmvcydbsatzkxknu',
+    'smtpSecure'    => 'tls',
+    'smtpPort'      => '587',
+    'smtpReciever'  => 'lafoireauxrecettes@gmail.com'
 );
 
 return $CONFIG;

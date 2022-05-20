@@ -1,9 +1,11 @@
 <?php
 /**
  * ETML
- * Auteur : Serghei Diulgherov
+ * @author : Serghei Diulgherov
  * Date: 06.05.2022
  * Recipe Web Site using an MVC model and Object-Oriented Programming
+ * 
+ * @copyright 2022 - ETML -Serghei Diulgherov
  */
 
 $debug = false;

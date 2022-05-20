@@ -52,6 +52,7 @@ class RecipeController extends Controller
             $uriQuery = http_build_query($uriVar);
             $url = "index.php?$uriQuery";
             header("Location: $url");
+            die();
         }
 
         $commentRepository = new CommentRepository();
@@ -66,6 +67,7 @@ class RecipeController extends Controller
             $uriQuery = http_build_query($uriVar);
             $url = "index.php?$uriQuery";
             header("Location: $url");
+            die();
         }
 
         $view = file_get_contents('view/page/recipe/detail.php');

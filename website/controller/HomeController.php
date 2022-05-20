@@ -5,6 +5,12 @@
  * Home 
  */
 
+ use PHPMailer\PHPMailer\PHPMailer;
+ use PHPMailer\PHPMailer\Exception;
+
+ require 'resources/library/PHPMailer-master/src/Exception.php';
+ require 'resources/library/PHPMailer-master/src/PHPMailer.php';
+ require 'resources/library/PHPMailer-master/src/SMTP.php';
 
 class HomeController extends Controller 
 {
@@ -48,6 +54,50 @@ class HomeController extends Controller
     private function contactAction()
     {
         $view = file_get_contents('view/page/home/contact.php');
+
+        if (isset($_GET['send']) && $_GET['send'] == TRUE)
+        {
+            $config = require_once 'resources/config.php';
+
+            $mail = new PHPMailer();
+
+            try
+            {
+                //server settings
+                $mail->SMTPDebug    = 0;
+                $mail->isSMTP();
+                $mail->Host         = $config['smtpServer'];
+                $mail->SMTPAuth     = true;
+                $mail->Username     = $config['smtpUsername'];
+                $mail->Password     = $config['smtpPassword'];
+                $mail->SMTPSecure   = $config['smtpSecure'];
+                $mail->Port         = $config['smtpPort'];
+
+                //recipient
+                $mail->setFrom($_POST['email'], $_POST['name']);
+                $mail->addAddress($config['smtpReciever']);
+
+                //content
+                $mail->Subject      = $_POST['subject'];
+                $mail->Body         = $_POST['message'];
+
+                $mail->send();
+                echo 'Message sent';
+            }
+            catch (Exception $e)
+            {
+                echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+            }
+            
+            $uri = parse_url($_SERVER['REQUEST_URI']);
+            var_dump($uri);
+            /*parse_str($uri['query'], $uriVar);
+            unset($uriVar['send']);
+            $uriQuery = http_build_query($uriVar);
+            $url = "index.php?$uriQuery";
+            header("Location: $url");
+            die();*/
+        }
 
         ob_start();
         eval('?>' . $view);

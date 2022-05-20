@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="logo mb-80">
-                        <img src="../resources/bootstrap/img/core-img/logo.png" alt="">
+                        <img src="resources/image/logos/logo.png" alt="">
                     </div>
                 </div>
             </div>
@@ -34,17 +34,17 @@
                 <div class="col-12 col-lg-3">
                     <!-- Single Contact Information -->
                     <div class="single-contact-information mb-30">
-                        <h6>Address:</h6>
+                        <h6>Adresse:</h6>
                         <p>Rue de Sébeillon 12, <br>1004 Lausanne</p>
                     </div>
                     <!-- Single Contact Information -->
                     <div class="single-contact-information mb-30">
-                        <h6>Phone:</h6>
+                        <h6>Téléphone:</h6>
                         <p>+41 021 316 77 77</p>
                     </div>
                     <!-- Single Contact Information -->
                     <div class="single-contact-information mb-30">
-                        <h6>Email:</h6>
+                        <h6>E-mail:</h6>
                         <p>lafoireauxrecettes@gmail.com</p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3>Nous Rejoindre</h3>
+                        <h3>Nous Contacter</h3>
                     </div>
                 </div>
             </div>
@@ -67,19 +67,19 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form action="mailto:lafoireauxrecettes@gmail.com">
+                        <form action="index.php?controller=home&action=contact&send=true" method="post">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                    <input type="text" class="form-control" name="name" placeholder="Nom" required>
                                 </div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                                    <input type="email" class="form-control" name="email" placeholder="E-mail" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                    <input type="text" class="form-control" name="subject" placeholder="Sujet" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                                    <textarea name="message" class="form-control" name="message" cols="30" rows="10" placeholder="Message" required></textarea>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button class="btn delicious-btn mt-30" type="submit">Envoyer</button>
