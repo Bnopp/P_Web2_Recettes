@@ -5,24 +5,6 @@
  * Group of methods allowing the connexion and retrieval of data from a database
  */
 
-/**
- * Modified by  : Serghei Diulgherov
- * Date         : 04.04.2022
- * Modifications:
- *      Added   - __construct
- *              - DBConnection
- */
-
-/**
- * Modified by  : Serghei Diulgherov
- * Date         : 11.04.2022
- * Modifications:
- *      Added   - querySimpleExecute
- *              - queryPrepareExecute
- *              - formatData
- *              - unsetData
- */
-
 class Data 
 {
     //Variables

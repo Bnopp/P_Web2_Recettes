@@ -119,7 +119,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form action="index.php?controller=recipe&action=detail&id=<?php print RECIPE[0]['idRecipe']; ?>&comment=true" method="post">
+                        <form action="index.php?controller=recipe&action=detail&id=<?php print RECIPE[0]['idRecipe']; ?>&comment=1" method="post">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <input type="text" class="form-control" name="name" placeholder="Nom">

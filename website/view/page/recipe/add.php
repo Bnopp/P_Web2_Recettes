@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form action="index.php?controller=recipe&action=add&add=true" method="post" enctype="multipart/form-data">
+                        <form action="index.php?controller=recipe&action=add&add=1" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <select class="selecting" name="select" id="select">
