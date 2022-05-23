@@ -84,5 +84,48 @@ class RecipeRepository implements Entity
         return $this -> _pdoConnection -> formatData($data);
     }
 
+    /**
+     * It adds a recipe to the database
+     * 
+     * @param title
+     * @param ingredients 
+     * @param preparation
+     * @param image
+     * @param category
+     * 
+     * @return array
+     */
+    public function addOne($title, $ingredients, $preparation, $image, $category)
+    {
+        $binds['title'] = ['value' => $title, 'type' => PDO::PARAM_STR];
+        $binds['ingredients'] = ['value' => $ingredients, 'type' => PDO::PARAM_STR];
+        $binds['preparation'] = ['value' => $preparation, 'type' => PDO::PARAM_STR];
+        $binds['image'] = ['value' => $image, 'type' => PDO::PARAM_STR];
+        $binds['category'] = ['value' => $category, 'type' => PDO::PARAM_INT];
+
+        $data = $this -> _pdoConnection -> queryPrepareExecute('INSERT INTO t_recipe (recTitle, recIngredients, recPreparation, recImage, fkCategory) VALUES (:title, :ingredients, :preparation, :image, :category)', $binds);
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
+
+    public function getLatestOne()
+    {
+        $data = $this -> _pdoConnection -> queryPrepareExecute('SELECT * FROM `t_recipe` ORDER BY `t_recipe`.`idRecipe` DESC');
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
+
+    public function updateOne($idRecipe, $title, $ingredients, $preparation, $category)
+    {
+        $binds['idRecipe'] = ['value' => $idRecipe, 'type' => PDO::PARAM_INT];
+        $binds['title'] = ['value' => $title, 'type' => PDO::PARAM_STR];
+        $binds['ingredients'] = ['value' => $ingredients, 'type' => PDO::PARAM_STR];
+        $binds['preparation'] = ['value' => $preparation, 'type' => PDO::PARAM_STR];
+        $binds['category'] = ['value' => $category, 'type' => PDO::PARAM_INT];
+
+        $data = $this -> _pdoConnection -> queryPrepareExecute('UPDATE t_recipe SET recTitle = :title, recIngredients = :ingredients, recPreparation = :preparation, fkCategory = :category WHERE idRecipe = :idRecipe', $binds);
+
+        return $this -> _pdoConnection -> formatData($data);
+    }
 }
 ?>

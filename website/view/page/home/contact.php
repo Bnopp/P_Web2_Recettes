@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form action="index.php?controller=home&action=contact&send=true" method="post">
+                        <form action="index.php?controller=home&action=contact&send=1" method="post">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <input type="text" class="form-control" name="name" placeholder="Nom" required>

@@ -84,9 +84,19 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <?php setActive("index"); ?><a href="index.php?controller=home&action=index">Accueil</a></li>
-                                <?php setActive("recipe"); ?><a href="index.php?controller=recipe&action=list">Recettes</a></li>
-                                <?php setActive("contact"); ?><a href="index.php?controller=home&action=contact">Contact</a></li>
+                                <?php if (isset(parse_url($_SERVER['REQUEST_URI'])['query'])): ?>
+                                    <?php setActive("index"); ?><a href="index.php?controller=home&action=index">Accueil</a></li>
+                                    <?php setActive("recipe"); ?><a href="index.php?controller=recipe&action=list">Recettes</a></li>
+                                    <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1) : ?>
+                                        <?php setActive("add"); ?><a href="index.php?controller=recipe&action=add">Ajouter une recette</a></li>
+                                    <?php endif ?>
+                                    <?php setActive("contact"); ?><a href="index.php?controller=home&action=contact">Contact</a></li>
+                                    <?php setActive("connect"); ?><a href="index.php?controller=home&action=connect">Connexion</a></li>
+                                <?php else: ?>
+                                    <li class="active"><a href="index.php?controller=home&action=index">Accueil</a></li>
+                                    <li><a href="index.php?controller=recipe&action=list">Recettes</a></li>
+                                    <li><a href="index.php?controller=home&action=contact">Contact</a></li>
+                                <?php endif ?>
                             </ul>
                         </div>
                         <!-- Nav End -->

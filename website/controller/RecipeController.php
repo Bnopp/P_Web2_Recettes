@@ -34,6 +34,9 @@ class RecipeController extends Controller
      */
     private function detailAction()
     {
+        $categoryRepository = new CategoryRepository();
+        define('CATEGORIES', $categoryRepository->getAll());
+
         $recipeRepository = new RecipeRepository();
         define('RECIPE', $recipeRepository->getOne($_GET['id']));
 
@@ -120,5 +123,48 @@ class RecipeController extends Controller
 
         return $content;
     } 
+
+    private function addAction(){
+
+        if (isset($_GET['add']) && $_GET['add'] == TRUE)
+        {
+            include 'resources\php\upload.php';
+            $recipeRepository = new RecipeRepository();
+            $recipeRepository->addOne($_POST['title'], $_POST['ingredients'], $_POST['preparation'], $_FILES["fileToUpload"]['name'], $_POST['select']);
+        }
+
+        $categoryRepository = new CategoryRepository();
+        define('CATEGORIES', $categoryRepository->getAll());
+
+        $view = file_get_contents('view/page/recipe/add.php');
+
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
+
+    private function modifyAction()
+    {
+        $categoryRepository = new CategoryRepository();
+        define('CATEGORIES', $categoryRepository->getAll());
+
+        $recipeRepository = new RecipeRepository();
+        define('RECIPE', $recipeRepository->getOne($_GET['id']));
+
+        if(isset($_GET['update']) && $_GET['update'] == 1)
+        {
+            $recipeRepository->updateOne($_GET['id'], $_POST['title'], $_POST['ingredients'], $_POST['preparation'], $_POST['select']);
+        }
+
+        $view = file_get_contents('view/page/recipe/modify.php');
+
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
 }
 ?>

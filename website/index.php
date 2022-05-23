@@ -18,6 +18,8 @@ if ($debug)
 
 date_default_timezone_set('Europe/Zurich');
 
+session_start();
+
 include_once 'controller/Controller.php';
 include_once 'controller/HomeController.php';
 include_once 'controller/RecipeController.php';
@@ -80,7 +82,7 @@ Class MainController
         $content = $currentPage->display();
 
         include(dirname(__FILE__) . '/view/head.html');
-        include(dirname(__FILE__) . '/view/header.html');
+        include(dirname(__FILE__) . '/view/header.php');
         echo $content;
         include(dirname(__FILE__) . '/view/footer.html');
     }

@@ -46,10 +46,21 @@
                     <?php foreach (RECIPES as $recipe): ?>
                         <div class="col-12 col-sm-6 col-lg-4">
                             <div class="single-best-receipe-area mb-30">
-                                <img src="resources/image/imgMainMeal/<?php echo $recipe['recImage']?>" style="height:10;"alt="Meal Image">
+                                <img src="resources/image/recipes/<?php echo $recipe['recImage']?>" style="height:300px; width:100%; object-fit:cover;"alt="Meal Image">
                                 <div class="receipe-content">
                                     <a href="index.php?controller=recipe&action=detail&id=<?php echo $recipe['idRecipe'] ?>">
-                                        <h5><?php echo $recipe['recTitle']?></h5>
+                                        <h5>
+                                            <?php 
+                                            echo $recipe['recTitle']; 
+                                            foreach (CATEGORIES as $category)
+                                            {
+                                                if ($category['idCategory'] == $recipe['fkCategory'])
+                                                {
+                                                    print " - " . htmlspecialchars($category['catName']);
+                                                }
+                                            } 
+                                            ?>
+                                        </h5>
                                     </a>
                                     <div class="ratings">
                                         <?php 
