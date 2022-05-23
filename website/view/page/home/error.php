@@ -1,3 +1,10 @@
+<!--
+	ETML
+	Auteur : Serghei Diulgherov
+	Date : 22.05.2022
+	Description : Error page
+-->
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6">

@@ -1,8 +1,17 @@
+<!--
+	ETML
+	Auteur : Serghei Diulgherov
+	Date : 06.05.2022
+	Description : A form to connect to the website.
+-->
 <div class="contact-area section-padding-0-80">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
+                <!-- Checking if the user is connected or not. If he is, it will display a message saying
+                that he is connected. If not, it will display a message saying that he is not
+                connected. -->
                 <?php if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == TRUE): ?>
                     <h3>Vous êtes connecté en tant que <?php print $_SESSION['connectedUser'] ?></h3>
                 <?php else: ?>

@@ -8,7 +8,8 @@
 */
 
 /**
- * Auteur   : Serghei Diulgherov
+ * ETML
+ * @author   : Serghei Diulgherov
  * Date     : 04.04.2022
  * Main controller
  */

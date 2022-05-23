@@ -1,3 +1,10 @@
+<!--
+	ETML
+	Auteur : Serghei Diulgherov
+	Date : 06.05.2022
+	Description : Header
+-->
+
 <?php 
     function setActive($page)
     {

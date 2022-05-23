@@ -1,21 +1,23 @@
 <?php
 /**
- * Auteur   : Serghei Diulgherov
+* Class and Function List:
+* Function list:
+* - getAll()
+* - getOne()
+* Classes list:
+*/
+/**
+ * ETML
+ * @author   : Serghei Diulgherov
  * Date     : 11.04.2022
  * Interface grouping all the methods needed in every repository
  */
-
-/**
- * Modified by  : Serghei Diulgherov
- * Date         : 11.04.2022
- * Modifications:
- *      Added   - getAll
- */
-
-interface Entity 
+interface Entity
 {
+    /* It's a method that returns all the data from the database. */
     public function getAll();
 
+    /* It's a method that returns one data from the database. */
     public function getOne($id);
 }
 ?>

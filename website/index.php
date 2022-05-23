@@ -1,11 +1,20 @@
 <?php
 /**
+* Class and Function List:
+* Function list:
+* - dispatch()
+* - menuSelected()
+* - viewBuild()
+* Classes list:
+* - MainController
+*/
+/**
  * ETML
  * @author : Serghei Diulgherov
  * Date: 06.05.2022
  * Recipe Web Site using an MVC model and Object-Oriented Programming
- * 
- * @copyright 2022 - ETML -Serghei Diulgherov
+ *
+ * @copyright 2022 - ETML - Serghei Diulgherov
  */
 
 $debug = false;
@@ -24,13 +33,13 @@ include_once 'controller/Controller.php';
 include_once 'controller/HomeController.php';
 include_once 'controller/RecipeController.php';
 
-Class MainController 
+class MainController
 {
     /**
      * It checks if the controller is set, if not it sets it to home. Then it calls the menuSelected
      * function and passes the controller to it. Then it calls the viewBuild function and passes the
      * currentLink to it.
-     * 
+     *
      * @return void
      */
     public function dispatch()
@@ -47,44 +56,44 @@ Class MainController
 
     /**
      * It's a function that takes a page as a parameter and returns a link to that page.
-     * 
+     *
      * @param page      => The page that is currently selected.
-     * 
+     *
      * @return void
      */
     protected function menuSelected($page)
     {
-        switch($_GET['controller'])
+        switch ($_GET['controller'])
         {
             case 'home':
                 $link = new HomeController();
-                break;
+            break;
             case 'recipe':
                 $link = new RecipeController();
-                break;
+            break;
             default:
                 $link = new HomeController();
-                break;
+            break;
         }
 
         return $link;
     }
-    
+
     /**
      * It takes the content of the current page and displays it in the default template.
-     * 
+     *
      * @param currentPage   => The page object that is being displayed.
-     * 
+     *
      * @return void
      */
     protected function viewBuild($currentPage)
     {
         $content = $currentPage->display();
 
-        include(dirname(__FILE__) . '/view/head.html');
-        include(dirname(__FILE__) . '/view/header.php');
+        include (dirname(__FILE__) . '/view/head.html');
+        include (dirname(__FILE__) . '/view/header.php');
         echo $content;
-        include(dirname(__FILE__) . '/view/footer.html');
+        include (dirname(__FILE__) . '/view/footer.html');
     }
 }
 

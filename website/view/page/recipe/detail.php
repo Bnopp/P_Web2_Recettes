@@ -1,3 +1,10 @@
+<!--
+	ETML
+	Auteur : Serghei Diulgherov
+	Date : 06.05.2022
+	Description : Recipe detail page
+-->
+
 <!-- ##### Breadcumb Area End ##### -->
 <div class="receipe-post-area section-padding-80">
     <!-- Receipe Slider -->
@@ -34,6 +41,7 @@
                     <div class="receipe-ratings text-right my-5">
                         <div class="ratings">
                             <?php
+                                /* Calculating the average rating of the recipe and displaying it. */
                                 if (count(RATINGS)>0){
                                     $totalRatings = array();
                                     foreach (RATINGS as $ratings)
@@ -93,16 +101,18 @@
                                     <input type="checkbox" class="custom-control-input" id="customCheck<?php print $counter?>">
                                     <label class="custom-control-label" for="customCheck<?php print $counter?>"><?php print $ingredient?></label>
                                 </div>
-                            <?php endforeach ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <form action="index.php?controller=recipe&action=modify&id=<?php print RECIPE[0]['idRecipe']; ?>" method="post">
-                        <div class="row">
-                            <div class="col-12">
-                                <button class="btn delicious-btn mt-30" type="submit">Modifier</button>
+                    <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == TRUE): ?>
+                        <form action="index.php?controller=recipe&action=modify&id=<?php print RECIPE[0]['idRecipe']; ?>" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn delicious-btn mt-30" type="submit">Modifier</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    <?php endif; ?>
                 <?php else: ?>
                     <div class="col-12">
                         <h2>Vous devez être connecté pour voir cette recette</h2>
