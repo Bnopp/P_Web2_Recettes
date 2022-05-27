@@ -22,7 +22,7 @@
 <!-- Preloader -->
 <div id="preloader">
     <i class="circle-preloader"></i>
-    <img src="resources/bootstrap/img/core-img/salad.png" alt="">
+    <img src="resources/bootstrap/img/core-img/salad.png" alt="loading">
 </div>
 
 <!-- Search Wrapper -->
@@ -73,7 +73,7 @@
                 <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.php?controller=home&action=index"><img src="resources/image/logos/logo.png" alt=""></a>
+                    <a class="nav-brand" href="index.php?controller=home&action=index"><img src="resources/image/logos/logo.png" alt="logo"></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">

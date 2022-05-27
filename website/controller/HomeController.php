@@ -45,10 +45,19 @@ class HomeController extends Controller
 
         $action = $_GET['action'] . "Action";
 
-        return call_user_func(array(
-            $this,
-            $action
-        ));
+        /* It checks if the function exists and if it does, it calls it. If it doesn't, it redirects
+        the user to the error page. */
+        if (method_exists($this, $action))
+            return call_user_func(array(
+                $this,
+                $action
+            ));
+        else
+        {
+            $_SESSION['error'] = "La page demandée n'existe pas";
+            header("Location: index.php?controller=home&action=error");
+            die();
+        }
     }
 
     /**

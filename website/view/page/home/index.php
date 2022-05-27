@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="logo mb-80">
-                    <img src="resources/image/logos/logo.png" alt="">
+                    <img src="resources/image/logos/logo.png" alt="logo">
                 </div>
             </div>
         </div>

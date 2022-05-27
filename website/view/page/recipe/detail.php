@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="row">
-                <?php if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == TRUE): ?>
+                <?php if (isset($_SESSION['isConnected']) && $_SESSION['isConnected']): ?>
                     <div class="col-12 col-lg-8">
                         <?php $steps = explode(".", RECIPE[0]["recPreparation"]); $counter = 0;?>
                         <?php foreach ($steps as $step): ?>

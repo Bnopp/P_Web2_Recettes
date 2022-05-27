@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="logo mb-80">
-                    <img src="resources/image/logos/logo.png" alt="">
+                    <img src="resources/image/logos/logo.png" alt="logo">
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <!-- Contact Text -->
             <div class="col-12 col-lg-5">
                 <div class="contact-text">
-                    <img src="resources/image/images/location.png">
+                    <img src="resources/image/images/location.png" alt="map">
                 </div>
             </div>
             <div class="col-12 col-lg-3">

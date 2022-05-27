@@ -37,10 +37,17 @@ class RecipeController extends Controller
 
         $action = $_GET['action'] . "Action";
 
-        return call_user_func(array(
-            $this,
-            $action
-        ));
+        if (method_exists($this, $action))
+            return call_user_func(array(
+                $this,
+                $action
+            ));
+        else
+        {
+            $_SESSION['error'] = "La page demandée n'existe pas";
+            header("Location: index.php?controller=home&action=error");
+            die();
+        }
     }
 
     /**
@@ -85,6 +92,12 @@ class RecipeController extends Controller
 			preg_match("/^(\p{L}|[0-9]|\W){1,}$/u", $_POST['message']))
             {
                 $commentRepository->addOne($_GET['id'], $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message']);
+            }
+            else
+            {
+                $_SESSION['error'] = "Le format que vous avez utilisé pour entrer vos données n'est pas valide.";
+                header("Location: index.php?controller=home&action=error");
+                die();
             }
 
             /* Redirecting the user to the same page without the comment parameter. */
@@ -161,34 +174,47 @@ class RecipeController extends Controller
      */
     private function addAction()
     {
-
-        if (isset($_GET['add']) && $_GET['add'] == 1)
+        /* It checks if the user is connected and if he is an admin. */
+        if ($_SESSION['isConnected'] && $_SESSION['isAdmin'])
         {
-            if (preg_match("/^\p{L}{1,}$/u", $_POST['title']) && preg_match("/^(\p{L}|,|\s|[0-9]|\W){1,}$/u", $_POST['ingredients']) && preg_match("^(\p{L}|\.|\s|[0-9]|\W){1,}$", $_POST['preparation']))
+            if (isset($_GET['add']) && $_GET['add'] == 1)
             {
-                include 'resources\php\upload.php';
-                $recipeRepository = new RecipeRepository();
-                $recipeRepository->addOne($_POST['title'], $_POST['ingredients'], $_POST['preparation'], $_FILES["fileToUpload"]['name'], $_POST['select']);
-            }
-            else
-            {
-                $_SESSION['error'] = "Le format que vous avez utilisé pour entrer vos données n'est pas valide.";
-                header("Location: index.php?controller=home&action=error");
-                die();
+                if (preg_match("/^(\p{L}|\s|\W){1,}$/u", $_POST['title']) && preg_match("/^(\p{L}|,|\s|[0-9]|\W){1,}$/u", $_POST['ingredients']) && preg_match("/^(\p{L}|\.|\s|[0-9]|\W){1,}$/u", $_POST['preparation']))
+                {
+                    include 'resources\php\upload.php';
+                    $recipeRepository = new RecipeRepository();
+                    $recipeRepository->addOne($_POST['title'], $_POST['ingredients'], $_POST['preparation'], $_FILES["fileToUpload"]['name'], $_POST['select']);
+
+                    $_SESSION['error'] = "La recette a été ajoutée avec succés.";
+                    header("Location: index.php?controller=home&action=error");
+                    die();
+                }
+                else
+                {
+                    $_SESSION['error'] = "Le format que vous avez utilisé pour entrer vos données n'est pas valide.";
+                    header("Location: index.php?controller=home&action=error");
+                    die();
+                }
             }
 
+            $categoryRepository = new CategoryRepository();
+            define('CATEGORIES', $categoryRepository->getAll());
+
+            $view = file_get_contents('view/page/recipe/add.php');
+
+            ob_start();
+            eval('?>' . $view);
+            $content = ob_get_clean();
+
+            return $content;
         }
-
-        $categoryRepository = new CategoryRepository();
-        define('CATEGORIES', $categoryRepository->getAll());
-
-        $view = file_get_contents('view/page/recipe/add.php');
-
-        ob_start();
-        eval('?>' . $view);
-        $content = ob_get_clean();
-
-        return $content;
+        else 
+        {
+            $_SESSION['error'] = "Vous devez être connecté en tand qu'administrateur pour voir cette page.";
+            header("Location: index.php?controller=home&action=error");
+            die();
+        }
+        
     }
 
     /**
@@ -199,34 +225,48 @@ class RecipeController extends Controller
      */
     private function modifyAction()
     {
-        $categoryRepository = new CategoryRepository();
-        define('CATEGORIES', $categoryRepository->getAll());
-
-        $recipeRepository = new RecipeRepository();
-        define('RECIPE', $recipeRepository->getOne($_GET['id']));
-
-        if (isset($_GET['update']) && $_GET['update'] == 1)
+        /* It checks if the user is connected and if he is an admin. */
+        if ($_SESSION['isConnected'] && $_SESSION['isAdmin'])
         {
-            if (preg_match("/^\p{L}{1,}$/u", $_POST['title']) && preg_match("/^(\p{L}|,|\s|[0-9]|\W){1,}$/u", $_POST['ingredients']) && preg_match("^(\p{L}|\.|\s|[0-9]|\W){1,}$", $_POST['preparation']))
+            $categoryRepository = new CategoryRepository();
+            define('CATEGORIES', $categoryRepository->getAll());
+
+            $recipeRepository = new RecipeRepository();
+            define('RECIPE', $recipeRepository->getOne($_GET['id']));
+
+            if (isset($_GET['update']) && $_GET['update'] == 1)
             {
-                $recipeRepository->updateOne($_GET['id'], $_POST['title'], $_POST['ingredients'], $_POST['preparation'], $_POST['select']);
-            }
-            else
-            {
-                $_SESSION['error'] = "Le format que vous avez utilisé pour entrer vos données n'est pas valide.";
-                header("Location: index.php?controller=home&action=error");
-                die();
+                if (preg_match("/^(\p{L}|\s|\W){1,}$/u", $_POST['title']) && preg_match("/^(\p{L}|,|\s|[0-9]|\W){1,}$/u", $_POST['ingredients']) && preg_match("/^(\p{L}|\.|\s|[0-9]|\W){1,}$/u", $_POST['preparation']))
+                {
+                    $recipeRepository->updateOne($_GET['id'], $_POST['title'], $_POST['ingredients'], $_POST['preparation'], $_POST['select']);
+
+                    $_SESSION['error'] = "La recette a été modifiée avec succés.";
+                    header("Location: index.php?controller=home&action=error");
+                    die();
+                }
+                else
+                {
+                    $_SESSION['error'] = "Le format que vous avez utilisé pour entrer vos données n'est pas valide.";
+                    header("Location: index.php?controller=home&action=error");
+                    die();
+                }
+
             }
 
+            $view = file_get_contents('view/page/recipe/modify.php');
+
+            ob_start();
+            eval('?>' . $view);
+            $content = ob_get_clean();
+
+            return $content;
         }
-
-        $view = file_get_contents('view/page/recipe/modify.php');
-
-        ob_start();
-        eval('?>' . $view);
-        $content = ob_get_clean();
-
-        return $content;
+        else 
+        {
+            $_SESSION['error'] = "Vous devez être connecté en tand qu'administrateur pour voir cette page.";
+            header("Location: index.php?controller=home&action=error");
+            die();
+        }
     }
 }
 ?>
